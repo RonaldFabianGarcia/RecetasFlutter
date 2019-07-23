@@ -1,9 +1,12 @@
 class Usuario {
   Usuario({this.uid,
           this.foto,
+          this.nombre,
           this.ciudad,
           this.email,
-          this.nombre
+          this.password,
+          this.telefono,
+          this.direccion
   });
 
   String uid;

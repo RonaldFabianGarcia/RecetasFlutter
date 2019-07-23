@@ -1,6 +1,6 @@
 class Recipe {
-  Recipe({this.uid,this.recipe,this.image,this.name});
-  String uid;
+  Recipe({this.id,this.recipe,this.image,this.name});
+  String id;
   String recipe;
   String name;
   String image;
