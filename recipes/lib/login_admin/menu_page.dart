@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:recipes/auth/auth.dart';
 import 'package:recipes/login_admin/contentPage.dart';
+import 'package:recipes/widgets/home_page.dart';
 
 const PrimaryColor = const Color(0xFF192128);
 
 class HomePage extends StatefulWidget {
   final BaseAuth auth;
   final VoidCallback onSignedOut;
-  HomePage({this.auth,this.onSignedOut})
+  HomePage({this.auth,this.onSignedOut});
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                  ListTile(
                   onTap: () {
                     Navigator.of(context).pop();
-                     page.myrecipe(id).then((value) {
+                     page.myrecipe().then((value) {
                       print(value);
                       setState(() {
                         contentPage = value;

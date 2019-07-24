@@ -1,9 +1,11 @@
+import 'package:recipes/widgets/home_page.dart';
+
 abstract class Content {
-  // Future<HomePageRecipes> lista();
-  // Future<InicioPage> recetas(String id);
-  // Future<MapsPage> mapa();
-  // Future<ListMyrecipe> myrecipe();
-  // Future<InicioPage> admin();
+  Future<HomePageRecipes> lista();
+  Future<InicioPage> recetas(String id);
+  Future<MapsPage> mapa();
+  Future<ListMyrecipe> myrecipe();
+  Future<InicioPage> admin();
 }
 
 class ContentPage implements Content {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/auth/auth.dart';
+import 'package:recipes/login_admin/root_page.dart';
 
 void main() {
     runApp(
@@ -10,15 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "MaterialApp",
-      home: Scaffold(
-        appBar: AppBar(title: Text("AppBar"),),
-        body: Center(
-          child: Container(
-            child: Text("Hello World"),
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: "Recetas",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: RootPage(auth: Auth(),)
     );
   }
 }
