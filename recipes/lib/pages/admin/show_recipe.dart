@@ -3,6 +3,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:recipes/auth/auth.dart';
 import 'package:recipes/model/recipe_model.dart';
+import 'package:recipes/pages/admin/edit_recipe.dart';
+import 'package:recipes/pages/admin/view_recipe.dart';
 
 import 'add_recipe.dart';
 class CommonThings {
@@ -116,13 +118,13 @@ class _InicioPageState extends State<InicioPage> {
                                 image: document['image'].toString(),
                                 recipe: document['recipe'].toString(),
                               );
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => EditRecipe(
-                              //             recipe: recipe,
-                              //             idRecipe: document.documentID,
-                              //             uid: userID)));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => EditRecipe(
+                                          recipe: recipe,
+                                          idRecipe: document.documentID,
+                                          uid: userID)));
                             },
                           ),
                         ),
@@ -160,13 +162,13 @@ class _InicioPageState extends State<InicioPage> {
                               image: document['image'].toString(),
                               recipe: document['recipe'].toString(),
                             );
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => ViewRecipe(
-                            //             recipe: recipe,
-                            //             idRecipe: document.documentID,
-                            //             uid: userID)));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ViewRecipe(
+                                        recipe: recipe,
+                                        idRecipe: document.documentID,
+                                        uid: userID)));
                           },
                         ),
                       ],
