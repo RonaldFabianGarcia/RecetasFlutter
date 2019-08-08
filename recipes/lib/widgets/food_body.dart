@@ -33,7 +33,7 @@ class _FoodBodyState extends State<FoodBody> {
     alignment: Alignment.center,
     color: Colors.white,
     child: StreamBuilder(
-      stream: Firestore.instance.collection("colrecipes").snapshots(),
+      stream: Firestore.instance.collection("mycolrecipes").snapshots(),
       builder: (BuildContext context,
           AsyncSnapshot<QuerySnapshot> snapshot) {
         if (!snapshot.hasData) {

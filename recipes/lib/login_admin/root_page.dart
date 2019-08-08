@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes/auth/auth.dart';
 import 'package:recipes/login_admin/menu_page.dart';
+import 'package:recipes/login_admin/sliders_page.dart';
 
 class RootPage extends StatefulWidget {
   final BaseAuth auth;
@@ -45,17 +46,23 @@ class _RootPageState extends State<RootPage> {
 
     switch (_authStatus) {
       case AuthStatus.notSignIn:
-        // return IntroScreen(
-        //   auth:widget.auth,
-        //   onSignedIn:_signIn
-        // ); 
+        return IntroScreen(
+          auth:widget.auth,
+          onSignIn:_signIn
+        ); 
         break;
       case
-       AuthStatus.notSignIn:
+       AuthStatus.signIn:
         return HomePage(
           auth:widget.auth,
           onSignedOut:_signOut
         );
+        break;
+      default:
+       return IntroScreen(
+          auth:widget.auth,
+          onSignIn:_signIn
+        ); 
         break;
     }
     return _widget;

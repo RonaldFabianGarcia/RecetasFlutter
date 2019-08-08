@@ -27,7 +27,7 @@ class _FoodTopState extends State<FoodTop> {
       width: double.infinity,
       color: Colors.black38,
       child: StreamBuilder(
-        stream: Firestore.instance.collection("colrecipes").snapshots(),
+        stream: Firestore.instance.collection("mycolrecipes").snapshots(),
         builder: (BuildContext context,
             AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {

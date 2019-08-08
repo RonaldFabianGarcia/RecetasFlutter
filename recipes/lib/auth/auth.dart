@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:async';
 import 'package:recipes/model/user_model.dart';
 
 abstract class BaseAuth{
@@ -19,7 +20,7 @@ class Auth implements BaseAuth {
   }
   @override
   Future<String> signUpEmailPassword(Usuario usuarioModel) async {
-    FirebaseUser user = await _firebaseAuth.signInWithEmailAndPassword(email: usuarioModel.email,password: usuarioModel.password);
+    FirebaseUser user = await _firebaseAuth.createUserWithEmailAndPassword(email: usuarioModel.email,password: usuarioModel.password);
 
     UserUpdateInfo usuario = UserUpdateInfo();
     usuario.displayName = usuarioModel.nombre;

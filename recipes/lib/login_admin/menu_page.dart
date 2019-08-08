@@ -96,13 +96,13 @@ class _HomePageState extends State<HomePage> {
                 Divider(height: 2.0, color: Colors.white,),
                  ListTile(
                   onTap: () {
-                    Navigator.of(context).pop();
-                     page.myrecipe().then((value) {
-                      print(value);
-                      setState(() {
-                        contentPage = value;
-                      });
-                    });
+                    // Navigator.of(context).pop();
+                    //  page.myrecipe().then((value) {
+                    //   print(value);
+                    //   setState(() {
+                    //     contentPage = value;
+                    //   });
+                    // });
                   },
                   leading: Icon(FontAwesomeIcons.pizzaSlice, color: Color(0xFF4FC3F7),),
                   title: Text('My Recipe', style: TextStyle(color: Color(0xFF4FC3F7)),),
@@ -122,13 +122,13 @@ class _HomePageState extends State<HomePage> {
                 ),               
                 ListTile(
                   onTap: () {
-                    Navigator.of(context).pop();
-                     page.mapa().then((value) {
-                      print(value);
-                      setState(() {
-                        contentPage = value;
-                      });
-                    });
+                    // Navigator.of(context).pop();
+                    //  page.mapa().then((value) {
+                    //   print(value);
+                    //   setState(() {
+                    //     contentPage = value;
+                    //   });
+                    // });
                   },
                   leading: Icon(FontAwesomeIcons.map, color: Color(0xFF4FC3F7),),
                   title: Text('Mapa Tiendas', style: TextStyle(color: Color(0xFF4FC3F7)),),

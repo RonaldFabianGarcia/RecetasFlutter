@@ -109,9 +109,10 @@ class _MyAddPageState extends State<MyAddPage> {
         if (_foto != null) {
           final StorageReference fireStoreRef = FirebaseStorage.instance
               .ref()
-              .child('usuarios')
-              .child(uid)
               .child('mycolrecipes')
+              .child(uid)
+              .child('uid')
+              .child('recipe')
               .child('$name.jpg');
           final StorageUploadTask task = fireStoreRef.putFile(
               _foto, StorageMetadata(contentType: 'image/jpeg'));
@@ -119,16 +120,14 @@ class _MyAddPageState extends State<MyAddPage> {
             onValue.ref.getDownloadURL().then((onValue) {
               setState(() {
                 urlFoto = onValue.toString();
-                Firestore.instance
-                    .collection('usuarios')
-                    .document(uid)
+                 Firestore.instance
                     .collection('mycolrecipes')
                     .add({
-                      'uid':uid,
-                      'name': name,
-                      'image': urlFoto,
-                      'recipe': recipe,
-                    })
+                  'uid': uid,
+                  'name': name,
+                  'image': urlFoto,
+                  'recipe': recipe,
+                })
                     .then((value) => Navigator.of(context).pop())
                     .catchError((onError) =>
                         print('Error al registrar su receta bd'));
@@ -138,7 +137,7 @@ class _MyAddPageState extends State<MyAddPage> {
           });
         } else {
           Firestore.instance
-              .collection('usuarios')
+              .collection('Usuarios')
               .document(uid)
               .collection('mycolrecipes')
               .add({

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipes/auth/auth.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'package:intro_slider/intro_slider.dart';
+import 'package:recipes/login_admin/login_page.dart';
 class IntroScreen extends StatefulWidget {
   final BaseAuth auth;
   final VoidCallback onSignIn;
@@ -38,7 +39,9 @@ class _IntroScreenState extends State<IntroScreen> {
         marginDescription: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 70.0),
         centerWidget: Text("Deslice para pasar siguiente pantalla", style: TextStyle(color: Colors.white)),
         backgroundImage: 'assets/images/huevos.gif',
-        onCenterItemPress: () {},
+        onCenterItemPress: () {
+          print("Click");
+        },
       ),
     );
     //two
@@ -70,7 +73,7 @@ class _IntroScreenState extends State<IntroScreen> {
   }
 
   void onDonePress(){
-    //Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage(auth:widget.auth,onSignin:widget.onSignIn)));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage(auth:widget.auth,onSignIn:widget.onSignIn)));
   }
 
   Widget renderNextBtn() {
